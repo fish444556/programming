@@ -1,23 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import logo from './logo.svg';
 import './App.css';
 
-const pageOne = () => {
-  return (
-    <div>
-      Page1
-    </div>
-  );
-}
-
-const pageTwo = () => {
-  return (
-    <div>
-      Page2
-    </div>
-  );
-}
+import PageOne from './components/PageOne';
+import PageTwo from './components/PageTwo';
 
 
 class App extends Component {
@@ -27,10 +13,9 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Switch>
-              <Route path="/one" component={pageOne} />
-              <Route exact path="/two" component={pageTwo} />
-              {/* <Route path="/blogs" component={Dashboard} /> */}
-              <Route path="/" component={pageOne} />
+              <Route path="/one" component={PageOne} />
+              <Route exact path="/two" component={PageTwo} />
+              <Route path="/" component={PageOne} />
             </Switch>
           </div>
         </BrowserRouter>
