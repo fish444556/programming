@@ -35,7 +35,6 @@ class PageOne extends Component {
 
 
   handleSubmit(event) {
-    console.warn('submit');
     event.preventDefault();
     this.props.addValue({
       val1: this.state.val1,
@@ -45,7 +44,7 @@ class PageOne extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{color: this.props.color}}>
         {this.props.value}
         <form onSubmit={this.handleSubmit}>
           <div>
@@ -65,7 +64,8 @@ class PageOne extends Component {
 };
 
 const mapStatesToProps = (state) => ({
-  value: state.pageOneReducer.value
+  value: state.pageOneReducer.value,
+  color: state.pageTwoReducer.color
 });
 
 export default connect(mapStatesToProps, { addValue })(PageOne);
