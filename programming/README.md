@@ -2,6 +2,7 @@
 ```
 git clone git@github.com:fish444556/programming.git
 cd programming
+cd programming
 npm install
 ```
 
